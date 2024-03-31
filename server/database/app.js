@@ -8,7 +8,7 @@ import cors from 'cors';
 const app = express();
 const port = 3030;
 
-app.use(cors())
+app.use(cors());
 app.use(require('body-parser').urlencoded({ extended: false }));
 
 const reviews_data = JSON.parse(readFileSync("reviews.json", 'utf8'));
@@ -23,10 +23,10 @@ import { deleteMany as _deleteMany, insertMany as _insertMany, find as _find } f
 
 try {
   deleteMany({}).then(()=>{
-    insertMany(reviews_data['reviews']);
+    insertMany(reviews_data.reviews);
   });
   _deleteMany({}).then(()=>{
-    _insertMany(dealerships_data['dealerships']);
+    _insertMany(dealerships_data.dealerships);
   });
   
 } catch (error) {
