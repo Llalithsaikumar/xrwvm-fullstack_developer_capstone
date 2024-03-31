@@ -1,13 +1,13 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
-const reviews = new Schema({
-	id: {
+const reviewsSchema = new Schema({
+  id: {
     type: Number,
     required: true,
-	},
-	name: {
+  },
+  name: {
     type: String,
     required: true
   },
@@ -41,4 +41,4 @@ const reviews = new Schema({
   },
 });
 
-module.exports = mongoose.model('reviews', reviews);
+export default mongoose.model('Review', reviewsSchema);
