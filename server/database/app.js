@@ -1,3 +1,6 @@
+// jshint esversion: 6
+
+
 import express, { raw } from 'express';
 import { connect } from 'mongoose';
 import { readFileSync } from 'fs';
