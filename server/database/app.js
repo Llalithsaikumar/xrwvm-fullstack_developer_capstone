@@ -1,10 +1,11 @@
 // jshint esversion: 6
+// jshint esversion: 8
 
 const express = require('express');
 const mongoose = require('mongoose');
 const fs = require('fs');
 const  cors = require('cors');
-const app = express()
+const app = express();
 const port = 3030;
 
 app.use(cors());
@@ -94,8 +95,8 @@ try {
 //Express route to insert review
 app.post('/insert_review', express.raw({ type: '*/*' }), async (req, res) => {
   data = JSON.parse(req.body);
-  const documents = await Reviews.find().sort( { id: -1 } )
-  let new_id = documents[0]['id']+1
+  const documents = await Reviews.find().sort( { id: -1 } );
+  let new_id = documents[0].id+1;
 
   const review = new Reviews({
 		"id": new_id,
